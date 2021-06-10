@@ -1,0 +1,4 @@
+- name: printing the mysql component
+  debug:
+    msg: component=mysql
+

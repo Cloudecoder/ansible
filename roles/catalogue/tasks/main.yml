@@ -1,0 +1,4 @@
+- name: printing the catalogue component
+  debug:
+    msg: component=catalogue
+

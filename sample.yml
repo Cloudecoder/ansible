@@ -1,0 +1,20 @@
+---
+ - name: Install the latest version
+  yum:
+    name: httpd
+    state: latest
+
+
+ - name: access variable
+   hosts: all
+   vars:
+     a=10
+     b=20
+   debugger:
+     msg: hello this is sandy
+
+## for i in cart catalogue frontend mongodb mysql payment rabbitmq redis shipping user ; do echo -e "[$(echo $i | tr [a-z] [A-Z])]\n$i.roboshop.internal" ; done
+
+
+
+

@@ -1,0 +1,4 @@
+- name: printing the payment component
+  debug:
+    msg: component=payment
+

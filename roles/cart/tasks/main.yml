@@ -1,0 +1,4 @@
+- name: printing component name
+  debug:
+    msg: component=cart
+

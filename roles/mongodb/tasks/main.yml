@@ -1,0 +1,4 @@
+- name: printing the mongodb component
+  debug:
+    msg: component=mongodb
+
