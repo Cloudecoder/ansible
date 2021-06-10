@@ -8,8 +8,8 @@
     state: present
 
 - name: Enable Nginx
-  ansible.builtin.systemd:
-  - name: enabled systemctl
+  service:
+    name: nginx
     state: started
     enabled: yes
 
