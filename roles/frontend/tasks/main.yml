@@ -13,6 +13,12 @@
     state: started
     enabled: yes
 
+- name:
+  git:
+    repo: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /usr/share/nginx/html/
+    archive: /tmp/frontend.zip
+
 - name: Git checkout
   ansible.builtin.git:
     repo: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
