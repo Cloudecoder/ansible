@@ -36,7 +36,7 @@ if [ "${INSTANCE_STATE}" = "stopped" ]; then
 fi
 
 echo -n Instance ${component} created - IPADDRESS is
-aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq | grep  PrivateIpAddress  |xargs -n1
+aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq | grep  PrivateIpAddress  |xargs -n1
 sleep 10
 DNS_UPDATE
 
