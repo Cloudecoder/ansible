@@ -15,7 +15,7 @@ ver=5
 
 DNS_UPDATE() {
 IPADDR=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" |jq .Reservations[].Instances[].PrivateIpAddress | xargs -n1)
-sed -e "s/COMPONENT/${component}/" -e "s/IPADDRESS/${IPADDR}/" record.json  >>/tmp/record.json
+sed -e "s/COMPONENT/${component}/" -e "s/IPADDRESS/${IPADDR}/" record.json  >/tmp/record.json
 aws route53 change-resource-record-sets --hosted-zone-id Z048532427Z8A2VSNE7P3 --change-batch file:///tmp/record.json | jq
 }
 
@@ -35,10 +35,10 @@ if [ "${INSTANCE_STATE}" = "stopped" ]; then
     exit 0
 fi
 
-echo -n Instance ${component} created - IPADDRESS is
-aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq | grep  PrivateIpAddress  |xargs -n1
-sleep 10
-DNS_UPDATE
+#echo -n Instance ${component} created - IPADDRESS is
+#aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq | grep  PrivateIpAddress  |xargs -n1
+#sleep 10
+#DNS_UPDATE
 
 }
 
