@@ -15,7 +15,7 @@
 
 - name: git checkout
   git:
-    repo: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    repo: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
     dest: /tmp/frontend.zip
 
 
