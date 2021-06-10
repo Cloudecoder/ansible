@@ -15,7 +15,7 @@ ver=5
 
 DNS_UPDATE() {
 IPADDR=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" |jq .Reservations[].Instances[].PrivateIpAddress | xargs -n1)
-sed -e "s/COMPONENT/${component}/" -e "s/IPADDRESS/${IPADDR}/" record.json  >/tmp/record.json
+sed -e "s/COMPONENT/${component}/" -e "s/IPADDRESS/${IPADDR}/" record.json  >>/tmp/record.json
 aws route53 change-resource-record-sets --hosted-zone-id Z048532427Z8A2VSNE7P3 --change-batch file:///tmp/record.json | jq
 }
 
