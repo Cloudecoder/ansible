@@ -16,7 +16,7 @@ ver=5
 DNS_UPDATE() {
 IPADDR=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" | jq .Reservation[].Instance[].PrivateIpAddress | xargs -n1)
 sed -e "s/COMPONENT/${component}" -e "s/IPADDRESS/${IPADDR}" record.json  >/tmp/record.json
-aws route53 change-resource-record-sets --hosted-zone-id Z048532427Z8A2VSNE7P3 --change-batch file:///tmp/record.json | jq
+aws route53 change-resource-record-sets --hosted-zone-id Z048532427Z8A2VSNE7P3 --change-batch file:///tmp/record.json
 }
 
 
@@ -40,6 +40,6 @@ fi
 ##To launch the instance with name
 aws ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq
 INSTANCE_CREATED
-sleep 20
+sleep 30
 DNS_UPDATE
 
