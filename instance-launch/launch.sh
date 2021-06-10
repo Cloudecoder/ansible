@@ -23,7 +23,7 @@ aws route53 change-resource-record-sets --hosted-zone-id Z048532427Z8A2VSNE7P3 -
 
 ##Validate Instrance is already there
 INSTANCE_CREATED() {
-INSTANCE_STATE=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" | jq .Reservations[].Instances[].State | xargs -n1 )
+INSTANCE_STATE=$( aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" | jq .Reservations[].Instances[].State.Name | xargs -n1 )
 if [ "${INSTANCE_STATE}" = "running" ]; then
   echo"instance is already there"
   DNS_UPDATE
