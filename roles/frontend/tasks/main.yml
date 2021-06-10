@@ -17,3 +17,22 @@
   ansible.builtin.git:
     repo: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
     dest: /tmp/frontend.zip
+
+- name: removing the resourses
+  ansible.builtin.shell:
+    shell: rm -rf /usr/share/nginx/html/*
+    chdir: /usr/share/nginx/html
+
+
+- name: Unarchive a file that is already on the remote machine
+  ansible.builtin.unarchive:
+    src: /tmp/frontend.zip
+    dest: /usr/share/nginx/html/
+    remote_src: yes
+
+
+- name: moving files
+  ansible.builtin.shell:
+    shell: mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html/.
+    chdir: /usr/share/nginx/html
+
