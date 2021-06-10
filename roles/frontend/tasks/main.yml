@@ -1,0 +1,19 @@
+- name: working in frontend
+  debug:
+    msg: component=catalogue
+
+- name: Install nginx
+    yum:
+      name: nginx
+      state: present
+
+- name: Enable Nginx
+  ansible.builtin.systemd:
+    name: enabled systemctl
+    state: started
+    enabled: yes
+
+- name: Git checkout
+  ansible.builtin.git:
+    repo: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+    dest: /tmp/frontend.zip
