@@ -19,6 +19,8 @@ sed -e "s/COMPONENT/${component}" -e "s/IPADDRESS/${IPADDR}" record.json  >>/tmp
 aws route53 get-hosted-zone --id Z048532427Z8A2VSNE7P3 --change-batch file:///tmp.record.json | jq
 }
 
+
+
 ##Validate Instrance is already there
 INSTANCE_CREATED() {
 INSTANCE_STATE=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" | jq .Reservation[].Instance[].State.Name | xargs -n1)
@@ -33,10 +35,10 @@ if [ "{INSTANCE_STATE}" = "stopped" ]; then
     exit 0
 fi
 
+
 ##To launch the instance with name
 aws ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq
 INSTANCE_CREATED
 sleep 20
 DNS_UPDATE
-}
 
