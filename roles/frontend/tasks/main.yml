@@ -9,7 +9,7 @@
 
 - name: Enable Nginx
   ansible.builtin.systemd:
-    name: enabled systemctl
+  - name: enabled systemctl
     state: started
     enabled: yes
 
