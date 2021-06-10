@@ -30,21 +30,21 @@ if [ "${INSTANCE_STATE}" = "running" ]; then
   exit 0
 fi
 
-if [ "{INSTANCE_STATE}" = "stopped" ]; then
+if [ "${INSTANCE_STATE}" = "stopped" ]; then
   echo"instance is already there"
     exit 0
 fi
 
 echo -n Instance ${component} created - IPADDRESS is
-aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq | grep  PrivateIpAddress  |xargs -n1
+aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq | grep  PrivateIpAddress  |xargs -n1
 sleep 10
 DNS_UPDATE
 
 }
 
 ##To launch the instance with name
-aws ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq
-INSTANCE_CREATED
-sleep 30
-DNS_UPDATE
+#aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq
+#INSTANCE_CREATED
+#sleep 30
+#DNS_UPDATE
 
