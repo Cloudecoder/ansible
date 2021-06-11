@@ -34,7 +34,7 @@
   hosts: all
   tasks:
     debug:
-      msg: python version = {{ansible_python_version}}
+      msg: python version = {{ ansible_python_version }}
 
 
 
