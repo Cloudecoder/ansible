@@ -4,7 +4,7 @@
    tasks:
      - name: print hello world
        debug:
-         msg: hello world
+           msg: hello world
 
 
  - name: access variable
@@ -13,7 +13,7 @@
      a=10
      b=20
    debug:
-     msg: hello {{a+B}}
+       msg: hello {{a+B}}
 
 ## for i in cart catalogue frontend mongodb mysql payment rabbitmq redis shipping user ; do echo -e "[$(echo $i | tr [a-z] [A-Z])]\n$i.roboshop.internal" ; done
 
