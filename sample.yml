@@ -23,6 +23,14 @@
       debug:
         msg: url == {{url}}
 
+- name: print address fron inventory
+  hosts: all
+  tasks:
+    - name: printing from inventory
+      debug:
+        msg: url=={{url}}
+
+
 
 
 ## for i in cart catalogue frontend mongodb mysql payment rabbitmq redis shipping user ; do echo -e "[$(echo $i | tr [a-z] [A-Z])]\n$i.roboshop.internal" ; done
