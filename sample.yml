@@ -14,7 +14,7 @@
       b: 20
    tasks:
       debug:
-       msg: hello {{ a + b }}
+       msg: "hello {{ a + b }} "
 
 ## for i in cart catalogue frontend mongodb mysql payment rabbitmq redis shipping user ; do echo -e "[$(echo $i | tr [a-z] [A-Z])]\n$i.roboshop.internal" ; done
 
