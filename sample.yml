@@ -26,9 +26,16 @@
 - name: print address fron inventory
   hosts: all
   tasks:
-    - name: printing from inventory
+    - name: printing from inventory file
       debug:
         msg: url=={{url}}
+
+- name: printing from facts
+  hosts: all
+  tasks:
+    debug:
+      msg: python version = {{ansible_python_version}}
+
 
 
 
