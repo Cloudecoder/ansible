@@ -12,7 +12,16 @@
       debug:
         msg: url == {{url}}
 
-- name: print from task level variable
+- name: print from user input
+  hosts: all
+  vars_prompt:
+    - name: url
+      prompt: enter the numbwer
+      private: no
+  tasks:
+    - name: prinitng the user input
+      debug:
+        msg: url == {{url}}
 
 
 
