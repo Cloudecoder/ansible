@@ -30,6 +30,13 @@
       debug:
         msg: url=={{url}}
 
+- name: printing from facts
+  hosts: all
+  tasks:
+    - name: printing from
+      debug:
+        msg: python version ={{ansible_python_version}}
+
 
 
 
