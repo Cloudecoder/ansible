@@ -33,6 +33,7 @@
 - name: printing from facts
   hosts: all
   tasks:
+    - name: printingggg
       debug:
         msg: python version ={{ansible_python_version}}
 
