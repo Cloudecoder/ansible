@@ -33,9 +33,9 @@
 - name: printing from facts
   hosts: all
   tasks:
-    - name: printing from
-      debug:
-        msg: python version ={{ansible_python_version}}
+    debug:
+      msg: python version ={{ansible_python_version}}
+
 
 
 
