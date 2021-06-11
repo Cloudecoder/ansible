@@ -1,20 +1,20 @@
-
- - name: Eemo on playbook
-   hosts: all
-   tasks:
-     - name: print hello world
-       debug:
-         msg: hello world
-
-
- - name: access variable
-   hosts: all
-   vars:
-     a: 10
-     b: 20
-   tasks:
+- name: demo on variable
+  hosts: all
+  vars:
+    url: paly.example.com
+  tasks:
+    - name: print variable
       debug:
-       msg: "hello {{ a + b }} "
+        msg: URL={{url}}
+    - name: print from task level
+      vars:
+        url: task.example.com
+      debug:
+        msg: url == {{url}}
+
+- name: print from task level variable
+
+
 
 ## for i in cart catalogue frontend mongodb mysql payment rabbitmq redis shipping user ; do echo -e "[$(echo $i | tr [a-z] [A-Z])]\n$i.roboshop.internal" ; done
 
