@@ -38,5 +38,5 @@
 
 - name: copy roboshopconf file to main
   copy:
-    src: ~/roboshop.conf
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
