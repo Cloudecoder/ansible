@@ -26,11 +26,11 @@
 
 - name: Moving files frontend-main
   command: mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html/
-  when: frontend-main.stat.exists
+
 
 - name: Moving files static
   command: mv /usr/share/nginx/html/static/* /usr/share/nginx/html/
-  when: static.stat.exists
+
 
 - name: moving files to nginx
   file:
