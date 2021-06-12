@@ -13,16 +13,18 @@
     state: started
     enabled: yes
 
-- name: Deleting previous content
-  file:
-    state: absent
-    path: /usr/share/nginx/html/
-
 - name: unarchive repo
   unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
     dest: /usr/share/nginx/html
     remote_src: true
+
+
+- name: Deleting previous content
+  file:
+    state: absent
+    path: /usr/share/nginx/html/
+
 
 
 - name: moving files to nginx
