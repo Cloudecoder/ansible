@@ -7,11 +7,7 @@
     name: nginx
     state: present
 
-- name: Enable Nginx
-  service:
-    name: nginx
-    state: started
-    enabled: yes
+
 
 - name: Creates directory
   file:
@@ -41,9 +37,9 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: restart the nginx
-  systemd:
+- name: Enable Nginx
+  service:
     name: nginx
-    state: restarted
+    state: started
     enabled: yes
 
