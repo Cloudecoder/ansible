@@ -30,7 +30,7 @@
 
 - name: Moving files static
   command: mv /usr/share/nginx/html/static/* /usr/share/nginx/html/
-  when: frontend-main.stat.exists
+  when: static.stat.exists
 
 - name: moving files to nginx
   file:
