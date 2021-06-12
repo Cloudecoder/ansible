@@ -25,13 +25,6 @@
     remote_src: true
 
 
-- name: Deleting previous content
-  file:
-    state: absent
-    path: /usr/share/nginx/html/
-
-
-
 - name: moving files to nginx
   file:
     src: /usr/share/nginx/html/frontend-main/
