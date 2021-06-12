@@ -24,12 +24,13 @@
     dest: /usr/share/nginx/html
     remote_src: true
 
+- name: Moving files frontend-main
+  command: mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html/
+  when: frontend-main.stat.exists
 
-- name: moving files to nginx
-  file:
-    src: /usr/share/nginx/html/frontend-main/
-    path: /usr/share/nginx/html/
-    state: hard
+- name: Moving files static
+  command: mv /usr/share/nginx/html/static/* /usr/share/nginx/html/
+  when: frontend-main.stat.exists
 
 - name: moving files to nginx
   file:
