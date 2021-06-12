@@ -37,9 +37,8 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Enable Nginx
-  service:
+- name: Enable a timer unit for dnf-automatic
+  ansible.builtin.systemd:
     name: nginx
-    state: started
+    state: restarted
     enabled: yes
-
