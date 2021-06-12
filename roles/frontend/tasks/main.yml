@@ -38,6 +38,7 @@
 
 - name: copy roboshopconf file to main
   copy:
-    src: /home/centos/ansible/roles/frontend/files/roboshop.conf
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-    remote_src: yes
+
+
