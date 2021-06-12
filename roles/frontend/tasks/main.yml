@@ -13,23 +13,17 @@
     state: started
     enabled: yes
 
-- name: Create git archive from repo
-  unarchive:
-    src: 'https://github.com/roboshop-devops-project/frontend/archive/main.zip'
-    dest: /tmp/
-    remote_src: true
-
-
 - name: Deleting previous content
   file:
     state: absent
     path: /usr/share/nginx/html/
 
-- name: Unarchive downloaded file
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip
+- name: unarchive repo
+  unarchive:
+    src: 'https://github.com/roboshop-devops-project/frontend/archive/main.zip'
     dest: /usr/share/nginx/html/
-    remote_src: yes
+    remote_src: true
+
 
 - name: moving files to nginx
   file:
