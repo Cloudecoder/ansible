@@ -25,7 +25,8 @@
     remote_src: true
 
 - name: Moving files frontend-main
-  command: mv /usr/share/nginx/html/frontend-main/ /usr/share/nginx/html/
+  command: mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html/.
+
 
 
 - name: Moving files static
