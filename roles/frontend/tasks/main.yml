@@ -13,16 +13,18 @@
     state: started
     enabled: yes
 
-- name: unarchive repo
-  unarchive:
-    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /usr/share/nginx/html
-    remote_src: true
-
 - name: Remove old content
   ansible.builtin.file:
     path: /usr/share/nginx/html/
     state: absent
+
+- name: unarchive repo
+  unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /usr/share/nginx/html/
+    remote_src: true
+
+
 
 
 - name: Link source file to another destination
