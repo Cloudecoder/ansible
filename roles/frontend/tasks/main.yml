@@ -7,6 +7,16 @@
     name: nginx
     state: present
 
+- name: Enable Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: ansible create directory example
+  file:
+    path: /usr/share/nginx/html
+    state: directory
 
 - name: unarchive repo
   unarchive:
