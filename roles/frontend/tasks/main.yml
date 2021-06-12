@@ -40,3 +40,4 @@
   copy:
     src: /home/centos/ansible/roles/frontend/files/roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+    remote_src: yes
