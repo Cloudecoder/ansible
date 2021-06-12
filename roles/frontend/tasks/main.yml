@@ -40,5 +40,6 @@
 - name: restarted nginx
   systemd:
     name: nginx
-    state: restarted
     enabled: yes
+    state: restarted
+
