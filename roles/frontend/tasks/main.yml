@@ -24,4 +24,8 @@
     dest: /usr/share/nginx/html
     remote_src: true
 
+- name: copy html file
+  copy:
+    src: /usr/share/nginx/html/frontend-main/
+    dest: /usr/share/nginx/html/
 
