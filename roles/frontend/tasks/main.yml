@@ -7,7 +7,7 @@
     name: nginx
     state: present
 
-- name: Install nginx
+- name: started nginx
   systemd:
     name: nginx
     state: started
