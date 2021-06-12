@@ -29,3 +29,9 @@
     src: /usr/share/nginx/html/frontend-main/
     dest: /usr/share/nginx/html/
     remote_src: yes
+
+- name: copy html file
+  copy:
+    src: /usr/share/nginx/html/frontend-main/static/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
