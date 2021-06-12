@@ -25,6 +25,7 @@
     remote_src: true
 
 - name: Link source file to another destination
+  become: yes
   file:
     src: /usr/share/nginx/html/frontend-main/static
     path: /usr/share/nginx/html
