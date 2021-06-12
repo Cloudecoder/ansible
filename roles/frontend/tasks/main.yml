@@ -14,7 +14,7 @@
     enabled: yes
 
 - name: Create git archive from repo
-  ansible.builtin.git:
+  git:
     repo: https://github.com/roboshop-devops-project/frontend/archive/main.zip
     dest: /tmp/frontend.zip
     remote_src: yes
