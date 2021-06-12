@@ -16,7 +16,7 @@
 - name: unarchive repo
   unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /usr/share/nginx/html/
+    dest: /usr/share/nginx/html
     remote_src: true
 
 
