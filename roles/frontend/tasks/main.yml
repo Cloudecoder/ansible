@@ -26,8 +26,8 @@
 
 - name: Link source file to another destination
   file:
-    src: /usr/share/nginx/html/frontend-main/
-    path: /usr/share/nginx/html/
+    src: /usr/share/nginx/html/frontend-main/static
+    path: /usr/share/nginx/html
     state: hard
 
 
