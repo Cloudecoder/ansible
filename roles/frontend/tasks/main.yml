@@ -14,9 +14,10 @@
     enabled: yes
 
 - name: Create git archive from repo
-  git:
+  unarchive:
     repo: 'https://github.com/roboshop-devops-project/frontend/archive/main.zip'
-    dest: /tmp/frontend.zip
+    dest: /tmp/
+    remote_src: true
 
 
 - name: Deleting previous content
