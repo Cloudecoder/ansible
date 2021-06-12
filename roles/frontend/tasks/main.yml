@@ -7,11 +7,7 @@
     name: nginx
     state: present
 
-- name: started nginx
-  systemd:
-    name: nginx
-    state: started
-    enabled: yes
+
 
 - name: Creates directory
   file:
