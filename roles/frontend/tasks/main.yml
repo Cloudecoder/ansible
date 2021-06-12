@@ -13,6 +13,10 @@
     state: started
     enabled: yes
 
+- name: Creates directory
+  file:
+    path: /usr/share/nginx/html
+    state: directory
 
 - name: unarchive repo
   unarchive:
@@ -20,24 +24,4 @@
     dest: /usr/share/nginx/html
     remote_src: true
 
-
-
-
-- name: Link source file to another destination
-  become: yes
-  file:
-    src: /usr/share/nginx/html/frontend-main/static
-    path: /usr/share/nginx/html
-    state: hard
-
-
-- name: Moving files static
-  command: mv /usr/share/nginx/html/static/* /usr/share/nginx/html/
-
-
-- name: moving files to nginx
-  file:
-    src: /usr/share/nginx/html/static/
-    path: /usr/share/nginx/html/
-    state: hard
 
