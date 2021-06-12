@@ -38,7 +38,7 @@
     dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Enable a timer unit for dnf-automatic
-  ansible.builtin.systemd:
+  systemd:
     name: nginx
     state: restarted
     enabled: yes
