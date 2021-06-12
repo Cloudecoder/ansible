@@ -7,7 +7,11 @@
     name: nginx
     state: present
 
-
+- name: Install nginx
+  systemd:
+    name: nginx
+    state: started
+    enabled: yes
 
 - name: Creates directory
   file:
@@ -20,13 +24,13 @@
     dest: /usr/share/nginx/html
     remote_src: true
 
-- name: copy html file
+- name: copy html file to html
   copy:
     src: /usr/share/nginx/html/frontend-main/
     dest: /usr/share/nginx/html/
     remote_src: yes
 
-- name: copy html file
+- name: copy html file to dest
   copy:
     src: /usr/share/nginx/html/frontend-main/static/
     dest: /usr/share/nginx/html/
@@ -37,7 +41,7 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Enable a timer unit for dnf-automatic
+- name: restarted nginx
   systemd:
     name: nginx
     state: restarted
