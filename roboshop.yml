@@ -1,16 +1,17 @@
 - name: setup roboshop project
   hosts: FRONTEND
   become: yes
-  tags:
-    - frontend
   roles:
     - name: loading the frontend
       role: frontend
+  tags:
+    - frontend
+
 
 - name: setting up the catalogue
   hosts: CATALOGUE
-  tags:
-    -catalogue
   roles:
     - name: working on catalogue
       role: catalogue
+  tags:
+    -catalogue
