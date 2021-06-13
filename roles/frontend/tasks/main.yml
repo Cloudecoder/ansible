@@ -40,7 +40,7 @@
 - name: restarted nginx
   service:
     name: nginx
-    state: restart
+    state: restarted
     enabled: yes
 
 
