@@ -3,9 +3,8 @@
   yum:
     name: nginx
     state: present
-    update_cache: yes
   notify:
-    - Restart mongodb
+    - Restart nginx
 
 - name: Creates directory
   file:
