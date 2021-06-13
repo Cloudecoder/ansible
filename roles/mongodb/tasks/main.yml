@@ -14,4 +14,4 @@
 
 - name: enable and start
   notify:
-    - restart "{{SERVICE}}"
+    - restart mongodb

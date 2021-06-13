@@ -1,4 +1,5 @@
-- name: restart "{{SERVICE}}"
-  ansible.builtin.systemd:
+- name: mongodb
+  systemd:
+    name: mongod
     state: restarted
-    name: "{{SERVICE}}"
+
