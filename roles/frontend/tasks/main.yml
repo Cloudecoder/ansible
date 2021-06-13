@@ -3,6 +3,8 @@
   yum:
     name: nginx
     state: present
+  notify:
+    - restart {{SERVICE}}
 
 - name: Creates directory
   file:
@@ -31,7 +33,5 @@
   copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-  notify:
-    - restart nginx
 
 
