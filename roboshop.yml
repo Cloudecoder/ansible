@@ -7,6 +7,16 @@
   tags:
     - frontend
 
+- name: setup mongodb
+  hosts: MONGODB
+  become: yes
+  roles:
+    - name: loading the mongodb
+      role: mongodb
+  tags:
+    - mongodb
+
+
 
 - name: setting up the catalogue
   hosts: CATALOGUE
