@@ -32,7 +32,7 @@ fi
 
 if [ "${INSTANCE_STATE}" = "stopped" ]; then
   echo"instance is already there"
-    return 0
+  return 0
 fi
 
 #echo -n Instance ${component} created - IPADDRESS is
