@@ -7,3 +7,11 @@
     enabled: yes
     gpgkey: https://www.mongodb.org/static/pgp/server-4.2.asc' >/etc/yum.repos.d/mongodb.repo
 
+- name: installing mongodb
+  yum:
+    name: mongodb-org
+    state: present
+
+- name: enable and start
+  notify:
+    - restart "{{SERVICE}}"
