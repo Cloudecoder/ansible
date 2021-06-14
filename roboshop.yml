@@ -1,5 +1,5 @@
 - name: setup roboshop project
-  hosts: FRONTEND
+  hosts: localhost
   become: yes
   roles:
     - name: loading the frontend
@@ -8,7 +8,7 @@
     - frontend
 
 - name: setup mongodb
-  hosts: MONGODB
+  hosts: localhost
   become: yes
   roles:
     - name: loading the mongodb
@@ -17,9 +17,8 @@
     - mongodb
 
 
-
 - name: setting up the catalogue
-  hosts: CATALOGUE
+  hosts: localhost
   roles:
     - name: working on catalogue
       role: catalogue
