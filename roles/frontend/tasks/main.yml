@@ -4,6 +4,7 @@
     name: nginx
     state: present
 
+
 - name: service NGINX start
   ansible.builtin.systemd:
     name: nginx
@@ -33,6 +34,10 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
+-name : copying roboshop config file
+  copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
