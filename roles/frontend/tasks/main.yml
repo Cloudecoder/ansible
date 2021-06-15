@@ -30,7 +30,7 @@
 - name: moving conf file
   args:
     chdir: /usr/share/nginx/html/
-  shell: mv localhost.conf /etc/nginx/default.d/roboshop.conf
+  command: mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
