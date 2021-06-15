@@ -2,7 +2,12 @@
 - name: Install nginx
   yum:
     name: nginx
-    state: present
+    state: latest
+
+- name: service NGINX start
+  systemd:
+    name: nginx
+    state: started
 
 
 - name: Remove old contents
@@ -36,9 +41,7 @@
     enabled: yes
 
 - name: copy the roboshop conf file
-  copy:
+  ansible.builtin.copy:
     src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
-
-
+    dest: /etc/nginx/default.d/
 
