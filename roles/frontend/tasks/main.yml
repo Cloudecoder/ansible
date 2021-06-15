@@ -2,10 +2,10 @@
 - name: Install nginx
   yum:
     name: nginx
-    state: latest
+    state: present
 
 - name: service NGINX start
-  systemd:
+  ansible.builtin.systemd:
     name: nginx
     state: started
 
@@ -36,7 +36,7 @@
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
-    state: restarted
+    state: reloaded
     name: nginx
     enabled: yes
 
