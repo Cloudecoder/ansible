@@ -4,11 +4,6 @@
     name: nginx
     state: present
 
-- name: Start Nginx Service
-  systemd:
-    name: nginx
-    state: started
-    enabled: yes
 
 - name: Remove old contents
   ansible.builtin.file:
