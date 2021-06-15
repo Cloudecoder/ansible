@@ -17,10 +17,3 @@
     - mongodb
 
 
-- name: setting up the catalogue
-  hosts: hosts
-  roles:
-    - name: working on catalogue
-      role: catalogue
-  tags:
-    -catalogue
