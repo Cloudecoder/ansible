@@ -4,36 +4,3 @@
     name: nginx
     state: present
   
-- name: Creates directory
-  file:
-    path: /usr/share/nginx/html
-    state: directory
-
-- name: unarchive repo
-  unarchive:
-    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /usr/share/nginx/html
-    remote_src: true
-
-- name: copy html file to html
-  copy:
-    src: /usr/share/nginx/html/frontend-main/
-    dest: /usr/share/nginx/html/
-    remote_src: yes
-
-- name: copy html file to dest
-  copy:
-    src: /usr/share/nginx/html/frontend-main/static/
-    dest: /usr/share/nginx/html/
-    remote_src: yes
-
-- name: copy roboshopconf file to main
-  copy:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
-
-- name: restart nginx
-  systemd:
-    state: restarted
-    name: nginx
-    enabled: yes
