@@ -4,8 +4,7 @@
   roles:
     - name: loading the frontend
       role: frontend
- tags:
-   - frontend
+ tags: frontend
 
 
 
