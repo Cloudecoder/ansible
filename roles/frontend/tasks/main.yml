@@ -9,4 +9,17 @@
     name: nginx
     state: started
     enabled: yes
-  
+
+- name: Remove old contents
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: Unarchive file from github
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /usr/share/nginx
+    remote_src: yes
+
+
+
