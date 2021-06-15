@@ -31,7 +31,7 @@
 
 
 - name: Downloading from github
-  include_tasks:
+  include_role:
     name: common
     tasks_from: git_checkout.yml
   vars:
