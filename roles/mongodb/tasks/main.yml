@@ -43,7 +43,7 @@
   community.mongodb.mongodb_shell:
     file: "/tmp/mongodb-main/{{item}}"
     idempotent: yes
-  loops:
-    - catalogue.js
-    - users.js
+    loops:
+      - catalogue.js
+      - users.js
 
