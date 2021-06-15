@@ -28,9 +28,11 @@
     remote_src: yes
 
 - name: moving conf file
-  args:
-    chdir: /usr/share/nginx/html/
-  command: mv localhost.conf /etc/nginx/default.d/roboshop.conf
+  copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
+
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
