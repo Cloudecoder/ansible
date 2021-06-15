@@ -3,9 +3,7 @@
   yum:
     name: nginx
     state: present
-  notify:
-    - Restart nginx
-
+  
 - name: Creates directory
   file:
     path: /usr/share/nginx/html
