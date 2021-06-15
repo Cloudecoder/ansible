@@ -21,5 +21,9 @@
     dest: /usr/share/nginx
     remote_src: yes
 
-
+- name: copy all content inside
+  ansible.builtin.copy:
+    src: /usr/share/nginx/frontend-main/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
 
