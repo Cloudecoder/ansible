@@ -40,8 +40,5 @@
     name: nginx
     enabled: yes
 
-- name: copy the roboshop conf file
-  ansible.builtin.copy:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/
+
 
