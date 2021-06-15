@@ -8,7 +8,7 @@
   ansible.builtin.systemd:
     name: nginx
     state: started
-    enabled: yes
+
 
 - name: Remove old contents
   ansible.builtin.file:
