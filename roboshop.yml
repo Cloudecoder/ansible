@@ -1,5 +1,5 @@
 - name: setup roboshop project
-  hosts: hosts
+  hosts: FRONTEND
   become: yes
   roles:
     - name: loading the frontend
@@ -8,7 +8,7 @@
     - frontend
 
 - name: setup mongodb
-  hosts: hosts
+  hosts: MONGODB
   become: yes
   roles:
     - name: loading the mongodb
