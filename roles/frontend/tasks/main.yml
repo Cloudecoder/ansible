@@ -36,7 +36,7 @@
     enabled: yes
 
 - name: copy the roboshop conf file
-    copy:
+  copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
