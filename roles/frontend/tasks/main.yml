@@ -4,6 +4,12 @@
     name: nginx
     state: present
 
+- name: Start Nginx Service
+  ansible.builtin.systemd:
+    name: nginx
+    state: started
+    enabled: yes
+
 - name: Remove old contents
   ansible.builtin.file:
     path: /usr/share/nginx/html
@@ -21,10 +27,10 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
-- name: Copy config file
-  copy:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
+- name: moving conf file
+  args:
+    chdir: /usr/share/nginx/html/
+    shell: mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
