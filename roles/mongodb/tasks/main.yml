@@ -30,3 +30,20 @@
     state: started
 
 
+- name: Downloading from github
+  include_tasks:
+    name: common
+    tasks_from: git_checkout.yml
+  vars:
+    APP_DIR: /tmp/mongodb-main
+    EXTRACT_DIR: /tmp/
+
+
+- name: Load Schema
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/{{item}}"
+    idempotent: yes
+  loops:
+    - catalogue.js
+    - users.js
+
