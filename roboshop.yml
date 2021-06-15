@@ -4,16 +4,9 @@
   roles:
     - name: loading the frontend
       role: frontend
-  tags:
-    - frontend
+ tags:
+   - frontend
 
-- name: setup mongodb
-  hosts: MONGODB
-  become: yes
-  roles:
-    - name: loading the mongodb
-      role: mongodb
-  tags:
-    - mongodb
+
 
 
