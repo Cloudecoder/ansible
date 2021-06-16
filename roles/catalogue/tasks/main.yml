@@ -1,10 +1,10 @@
 - name: Setting up the catalogue component
   yum:
-     name:
+    with_items:
         - nodejs
         - make
         - gcc-c++
-     state: present
+     state: installed
 
 - name: Add the user Roboshop
   user:
