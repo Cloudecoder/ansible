@@ -32,7 +32,7 @@
 - name: copy systemd files
   copy:
     src: /home/roboshop/{{COMPONENT}}/systemd.service
-    dest: /etc/systemd/system/catalogue.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
 - name: SYSTEM CTL restart service
   systemd:
