@@ -11,14 +11,10 @@
     name: roboshop
     comment: adding
 
-- name: Git checkout
-  ansible.builtin.git:
-    repo: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
-    dest: /tmp/catalogue.zip
 
 - name: Unarchive the package
   ansible.builtin.unarchive:
-    src: /tmp/catalogue.zip
+    src: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
     dest: /home/roboshop/
     remote_src: yes
 
