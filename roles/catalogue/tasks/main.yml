@@ -36,7 +36,7 @@
 
 - name: SYSTEM CTL restart service
   systemd:
-    name: {{COMPONENT}}
+    name: "{{COMPONENT}}"
     state: restarted
     enabled: yes
     daemon_reload: yes
