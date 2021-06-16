@@ -15,7 +15,7 @@
 - name: Unarchive the package
   ansible.builtin.unarchive:
     src: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
-    dest: /home/roboshop/{{COMPONENT}}
+    dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
 
 
