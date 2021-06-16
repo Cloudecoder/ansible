@@ -11,6 +11,10 @@
     name: roboshop
     comment: adding
 
+- name: deleating the previous components
+  file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
 
 - name: Unarchive the package
   ansible.builtin.unarchive:
