@@ -1,3 +1,42 @@
 - name: Setting up the catalogue component
+  yum:
+     name:
+        - nodejs
+        - make
+        - gcc-c++
+     state: present
 
+- name: Add the user Roboshop
+  user:
+    name: roboshop
+    comment: adding
 
+- name: Download from git
+  include_role:
+    name: common
+    tasks_from: git_checkout.yml
+  vars:
+    APP_DIR: /home/roboshop/{{COMPONENT}}
+    EXTRACT_DIR: /tmp/
+
+- name: ectract to path
+  copy:
+    src: /tmp/{{COMPONENT}}-main/
+    dest: /home/roboshop/{{COMPONENT}}
+
+- name: Install node.js package.
+  community.general.npm:
+    path: /home/roboshop/{{COMPONENT}}
+  become_user: roboshop
+
+- name: copy systemd files
+  copy:
+    src: /home/roboshop/{{COMPONENT}}/systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: SYSTEM CTL restart service
+  systemd:
+    name: {{COMPONENT}}
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
