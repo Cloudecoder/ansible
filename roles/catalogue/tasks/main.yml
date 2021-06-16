@@ -19,10 +19,11 @@
     APP_DIR: /home/roboshop/
     EXTRACT_DIR: /tmp/
 
-- name: ectract to path
+- name: extract to path
   copy:
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/roboshop/{{COMPONENT}}
+    remote_src: yes
 
 - name: Install node.js package.
   community.general.npm:
