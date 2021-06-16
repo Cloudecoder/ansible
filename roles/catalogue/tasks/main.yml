@@ -22,7 +22,7 @@
 - name: copy files
   copy:
     src: /tmp/catalogue-main
-    dest: /home/roboshop/
+    dest: /home/roboshop/catalogue
     remote_src: yes
   become_user: roboshop
 
