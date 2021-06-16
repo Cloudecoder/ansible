@@ -16,7 +16,7 @@
     name: common
     tasks_from: git_checkout.yml
   vars:
-    APP_DIR: /home/roboshop/{{COMPONENT}}
+    APP_DIR: /home/roboshop/
     EXTRACT_DIR: /tmp/
 
 - name: ectract to path
