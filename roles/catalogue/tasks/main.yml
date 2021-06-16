@@ -11,20 +11,15 @@
     name: roboshop
     comment: adding
 
+- name: Git checkout
+  ansible.builtin.git:
+    repo: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
+    dest: /tmp/catalogue.zip
 
-
-- name: Download from git
-  include_role:
-    name: common
-    tasks_from: git_checkout.yml
-  vars:
-    APP_DIR: /home/roboshop/{{COMPONENT}}
-    EXTRACT_DIR: /tmp/
-
-- name: extract to path
-  copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: /home/roboshop/{{COMPONENT}}
+- name: Unarchive the package
+  ansible.builtin.unarchive:
+    src: /tmp/catalogue.zip
+    dest: /home/roboshop/
     remote_src: yes
 
 - name: Install node.js package.
