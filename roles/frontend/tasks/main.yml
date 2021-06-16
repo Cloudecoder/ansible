@@ -4,16 +4,16 @@
     name: nginx
     state: installed
 
+- name: Remove old contents
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
 - name: Start Nginx Service
   ansible.builtin.systemd:
     state: started
     name: nginx
 
-
-- name: Remove old contents
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
 
 - name: Unarchive file from github
   ansible.builtin.unarchive:
