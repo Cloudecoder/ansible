@@ -9,7 +9,6 @@
   ansible.builtin.systemd:
     state: started
     name: nginx
-    enabled: yes
 
 - name: Remove old contents
   ansible.builtin.file:
@@ -37,7 +36,8 @@
 - name : copying roboshop config file
   copy:
     src: roboshop.conf
-    dest: /etc/nginx/default.d/
+    dest: /etc/nginx/default.d/roboshop.conf
+  ignore_errors: true
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
