@@ -4,13 +4,6 @@
     name: nginx
     state: installed
 
-
-- name: service NGINX start
-  ansible.builtin.systemd:
-    name: nginx
-    state: started
-
-
 - name: Remove old contents
   ansible.builtin.file:
     path: /usr/share/nginx/html
