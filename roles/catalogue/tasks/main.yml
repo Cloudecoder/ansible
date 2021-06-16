@@ -13,13 +13,13 @@
 
 - name: deleating the previous components
   file:
-    path: /home/roboshop/{{COMPONENT}}
+    path: /home/roboshop/
     state: absent
 
 - name: Unarchive the package
   ansible.builtin.unarchive:
     src: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
-    dest: /home/roboshop/{{COMPONENT}}/
+    dest: /home/roboshop/{{COMPONENT}}-main/
     remote_src: yes
   become_user: roboshop
 
