@@ -7,9 +7,11 @@
     state: installed
 
 - name: Add the user Roboshop
-  user:
+  ansible.builtin.user:
     name: roboshop
     comment: adding
+
+
 
 - name: Download from git
   include_role:
