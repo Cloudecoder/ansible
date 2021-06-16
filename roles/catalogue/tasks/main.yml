@@ -23,7 +23,7 @@
 
 - name: Install node.js package.
   community.general.npm:
-    path: /home/roboshop/{{COMPONENT}}
+    path: /home/roboshop/{{COMPONENT}}/
   become_user: roboshop
 
 - name: copy systemd files
