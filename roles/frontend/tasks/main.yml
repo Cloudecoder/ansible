@@ -3,10 +3,10 @@
   yum:
     name: nginx
     state: present
-    update_cache: yes
+
 
 - name: Start NGiNX
-  service:
+  ansible.builtin.systemd:
     name: nginx
     state: started
 
@@ -42,7 +42,7 @@
 
 
 - name: Start Nginx Service
-  service:
+  ansible.builtin.systemd:
     state: restarted
     name: nginx
     enabled: yes
