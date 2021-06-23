@@ -4,6 +4,13 @@
     name: nginx
     state: present
 
+- name: Start Nginx Service
+  ansible.builtin.systemd:
+    state: started
+    name: nginx
+
+
+
 - name: Remove old contents
   ansible.builtin.file:
     path: /usr/share/nginx/html
@@ -31,7 +38,7 @@
   copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-
+  notify: Restart Nginx
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
