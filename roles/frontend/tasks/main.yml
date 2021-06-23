@@ -3,6 +3,12 @@
     name: nginx
     state: present
 
+- name: Start Nignx
+  ansible.builtin.systemd:
+    state: started
+    name: nginx
+
+
 - name: Download Package
   include_role:
     name: common
