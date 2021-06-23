@@ -1,7 +1,7 @@
 - name: remove previous content
-  yum:
-    - name: nginx
-      state: absent
+   yum:
+     name: nginx
+     state: absent
 
 - name: Install nginx
   yum:
