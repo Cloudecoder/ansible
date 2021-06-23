@@ -45,6 +45,6 @@ fi
 #To launch the instance with name
 aws --region us-east-1 ec2 run-instances --launch-template LaunchTemplateId=${LTid},Version=${ver} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" | jq
 INSTANCE_CREATED
-sleep 10
+sleep 20
 DNS_UPDATE
 
