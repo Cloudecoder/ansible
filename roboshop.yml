@@ -1,9 +1,9 @@
 - name: LOADING THE FRONTEND
   hosts: FRONTEND
+  become: yes
   tags:
     - front
-  become: yes
-  roles:
+    roles:
     - name: loading the frontend
       role: frontend
 
