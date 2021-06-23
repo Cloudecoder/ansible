@@ -4,8 +4,10 @@
     state: present
 
 - name: Start Nignx
-  shell:
-    "systemctl start nginx"
+  ansible.builtin.systemd:
+    state: start
+    name: nginx
+
 
 - name: Download Package
   include_role:
@@ -21,6 +23,10 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
+- name: copy roboshop.conf to the remote server
+  copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Start Nignx
   ansible.builtin.systemd:
