@@ -3,6 +3,10 @@
     name: nginx
     state: present
 
+- name: starting the nginx service
+  systemd:
+    name: nginx
+    state: started
 
 - name: Download Package
   include_role:
