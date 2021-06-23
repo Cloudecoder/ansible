@@ -2,7 +2,8 @@
 - name: Install nginx
   yum:
     name: nginx
-    state: latest
+    state: present
+    update_cache: yes
 
 - name: Start NGiNX
   service:
