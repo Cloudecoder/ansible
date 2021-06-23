@@ -1,6 +1,6 @@
 
 - name: Install nginx
-  yum:
+  ansible.buitin.yum:
     name: nginx
     state: present
 
@@ -28,11 +28,14 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
-
+- name: copying the conf file
+  copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
-    state: started
+    state: restarted
     name: nginx
     enabled: yes
 
