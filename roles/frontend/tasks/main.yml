@@ -4,10 +4,8 @@
     state: present
 
 - name: Start Nignx
-  ansible.builtin.systemd:
-    state: started
-    name: nginx
-
+  shell:
+    "systemctl start nginx"
 
 - name: Download Package
   include_role:
