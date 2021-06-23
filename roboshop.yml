@@ -15,23 +15,6 @@
   - name: loading the frontend
     role: frontend
 
-- name:  LOADING THE MONGOdb
-  hosts: MONGODB
-  tags:
-    - mongodb
-  become: yes
-  roles:
-    - name: loading DataBase
-      role: mongodb
-
-- name:  LOADING THE CATALOGUE
-  hosts: CATALOGUE
-  tags:
-    - catalogue
-  become: yes
-  roles:
-    - name: loading CAtalogue service
-      role: catalogue
 
 
 
