@@ -28,8 +28,8 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Start Nignx
+- name: Restart Nignx
   ansible.builtin.systemd:
-    state: restart
+    state: restarted
     name: nginx
     enabled: yes
