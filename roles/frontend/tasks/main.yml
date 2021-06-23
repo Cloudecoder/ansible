@@ -4,12 +4,6 @@
     name: nginx
     state: present
 
-- name: Start Nginx Service
-  ansible.builtin.systemd:
-    state: started
-    name: nginx
-
-
 
 - name: Remove old contents
   ansible.builtin.file:
