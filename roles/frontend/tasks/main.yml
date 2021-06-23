@@ -37,11 +37,11 @@
   copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-  ignore_errors: true
+
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
-    state: reloaded
+    state: restarted
     name: nginx
     enabled: yes
 
