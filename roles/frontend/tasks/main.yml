@@ -4,6 +4,10 @@
     name: nginx
     state: latest
 
+- name: Start NGiNX
+  service:
+    name: nginx
+    state: started
 
 
 
@@ -37,7 +41,7 @@
 
 
 - name: Start Nginx Service
-  ansible.builtin.systemd:
+  service:
     state: restarted
     name: nginx
     enabled: yes
