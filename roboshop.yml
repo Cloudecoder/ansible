@@ -3,9 +3,9 @@
   become: yes
   tags:
     - front
-    roles:
-    - name: loading the frontend
-      role: frontend
+  roles:
+  - name: loading the frontend
+    role: frontend
 
 - name:  LOADING THE MONGOdb
   hosts: MONGODB
