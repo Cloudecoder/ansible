@@ -26,7 +26,3 @@
     name: nginx
     enabled: yes
 
-- name: copy the roboshop congig file
-  copy:
-    src: roboshop.conf
-    dest: /etc/nginx/default.d/
