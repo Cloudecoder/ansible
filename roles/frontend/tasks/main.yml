@@ -3,10 +3,7 @@
     name: nginx
     state: present
 
-- name: starting the nginx service
-  ansible.builtin.systemd:
-    name: nginx
-    state: started
+
 
 - name: Download Package
   include_role:
@@ -25,6 +22,6 @@
 
 - name: Restart Nignx
   ansible.builtin.systemd:
-    state: reloaded
+    state: started
     name: nginx
     enabled: yes
