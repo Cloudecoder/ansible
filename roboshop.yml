@@ -10,7 +10,7 @@
   hosts: FRONTEND
   become: yes
   tags:
-    - front
+    - frontend
   roles:
   - name: loading the frontend
     role: frontend
