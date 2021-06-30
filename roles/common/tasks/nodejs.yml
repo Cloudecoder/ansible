@@ -1,4 +1,4 @@
-- name: Setting up the "{$COMPONENT}" component
+- name: Setting up the {{COMPONENT}} component
   yum:
     name:
       - nodejs
