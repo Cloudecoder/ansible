@@ -19,10 +19,15 @@
     dest: /usr/share/nginx/html/
     remote_src: yes
 
+- name: loading the Roboshop config file
+  copy:
+    src: rocoshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Restart Nignx
   ansible.builtin.systemd:
     state: restarted
     name: nginx
     enabled: yes
+
 
