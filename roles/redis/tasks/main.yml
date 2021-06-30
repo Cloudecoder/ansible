@@ -1,6 +1,5 @@
 - name: installing {{COMPONENT}} components
   yum:
     name:
-      - epel-release yum-utils -y
-      - http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+      - epel-release yum-utils -y,http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
     state: present
