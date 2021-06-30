@@ -18,7 +18,7 @@
 
 - name: moving files
   become: yes
-  shell: mv /tmp/{{COMPONENT}}-main/ /home/roboshop/{{COMPONENT}} | bash
+  shell: mv /tmp/{{COMPONENT}}-main/* /home/roboshop/{{COMPONENT}}/. | bash
 
 
 - name: Install node.js package.
