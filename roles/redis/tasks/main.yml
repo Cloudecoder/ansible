@@ -17,6 +17,7 @@
 
 - name: Restart redis database
   systemd:
+    name: redis
     state: started
     enabled: yes
 
