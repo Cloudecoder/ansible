@@ -4,5 +4,3 @@
     tasks_from: nodejs.yml
   vars:
     COMPONENT: catalogue
-  notify:
-    - Restart catalogue
