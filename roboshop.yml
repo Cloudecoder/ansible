@@ -33,6 +33,13 @@
     - name: loading the catalogue
       role: catalogue
 
-
+- name: LOADING THE REDIS
+  hosts: REDIS
+  become: yes
+  tags:
+    - redis
+  roles:
+    - name: loading the redis
+      role: redis
 
 
