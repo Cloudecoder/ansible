@@ -24,6 +24,14 @@
     - name: loading the mongodb
       role: mongodb
 
+- name: LOADING THE CATALOGUE
+  hosts: CATALOGUE
+  become: yes
+  tags:
+    - catalogue
+  roles:
+    - name: loading the catalogue
+      role: catalogue
 
 
 
