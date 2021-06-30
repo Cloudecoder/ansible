@@ -26,6 +26,7 @@
     path: /home/roboshop/{{COMPONENT}}/
   become_user: roboshop
 
+
 - name: copy systemd files
   copy:
     src: roles/catalogue/files/{{COMPONENT}}.service
