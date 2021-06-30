@@ -17,8 +17,8 @@
     remote_src: yes
 
 - name: moving files
-  shell: mv /tmp/{{COMPONENT}}-main/* /home/roboshop/{{COMPONENT}}/. | bash
   become: yes
+  shell: mv /tmp/{{COMPONENT}}-main /home/roboshop/{{COMPONENT}} | bash
 
 
 #- name: Install node.js package.
