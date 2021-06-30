@@ -15,6 +15,15 @@
   - name: loading the frontend
     role: frontend
 
+- name: LOADING THE MONGODB
+  hosts: MONGODB
+  become: yes
+  tags:
+    - mongodb
+  roles:
+    - name: loading the mongodb
+      role: mongodb
+
 
 
 
