@@ -44,10 +44,10 @@
 
 - name: LOADING THE USER
   hosts: USER
-  become: yes
   tags:
     - user
   roles:
     - name: loading the user
       role: user
+
 
