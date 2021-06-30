@@ -21,23 +21,23 @@
   shell: mv /tmp/{{COMPONENT}}-main /home/roboshop/{{COMPONENT}} | bash
 
 
-#- name: Install node.js package.
-#  community.general.npm:
-#    path: /home/roboshop/{{COMPONENT}}/
-#  become_user: roboshop
+- name: Install node.js package.
+  community.general.npm:
+    path: /home/roboshop/{{COMPONENT}}/
+  become_user: roboshop
 
 
-#- name: copy systemd files
-#  copy:
-#    src: roles/{{COMPONENT}}/files/{{COMPONENT}}.service
-#    dest: /etc/systemd/system/{{COMPONENT}}.service
+- name: copy systemd files
+  copy:
+    src: roles/{{COMPONENT}}/files/{{COMPONENT}}.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
-#- name: SYSTEM CTL restart service
-#  systemd:
-#    name: "{{COMPONENT}}"
-#    state: restarted
-#    enabled: yes
-#    daemon_reload: yes
+- name: SYSTEM CTL restart service
+  systemd:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
 
 
 
