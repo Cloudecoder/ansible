@@ -20,6 +20,11 @@
   become: yes
   shell: mv /tmp/{{COMPONENT}}-main/* /home/roboshop/{{COMPONENT}}/. | bash
 
+- name: Change File PErmissions
+  file:
+    path: /home/roboshop/{{COMPONENT}}
+    owner: roboshop
+    group: roboshop
 
 - name: Install node.js package.
   become_user: roboshop
