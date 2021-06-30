@@ -1,0 +1,54 @@
+- name: Setting up the "${COMPONENT}" component
+  yum:
+    name:
+      - nodejs
+      - make
+      - gcc-c++
+    state: installed
+
+- name: Add the user Roboshop
+  ansible.builtin.user:
+    name: roboshop
+    comment: adding
+
+- name: Unarchive the package
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+
+- name: copy files
+  copy:
+    src: /tmp/{{COMPONENT}}-main
+    dest: /home/roboshop/{{COMPONENT}}
+    remote_src: yes
+  become_user: roboshop
+
+
+- name: Install node.js package.
+  community.general.npm:
+    path: /home/roboshop/{{COMPONENT}}/
+  become_user: roboshop
+
+- name: copy systemd files
+  copy:
+    src: {{COMPONENT}}.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: SYSTEM CTL restart service
+  systemd:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+
+
+
+
+
+
+
+
+
+
