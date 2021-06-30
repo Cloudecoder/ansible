@@ -1,5 +1,10 @@
 - name: installing {{COMPONENT}} components
   yum:
-    name:
-      - epel-release yum-utils -y,http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+    name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
     state: present
+
+- name: Enabling the Redis repo
+  yum:
+    name: redis
+    state: present
+    enablerepo: "remi"
