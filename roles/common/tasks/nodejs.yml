@@ -7,9 +7,7 @@
     state: installed
 
 - name: Add the user Roboshop
-  ansible.builtin.user:
-    name: roboshop
-    comment: adding
+  shell: useradd roboshop | bash
 
 - name: Unarchive the package
   ansible.builtin.unarchive:
