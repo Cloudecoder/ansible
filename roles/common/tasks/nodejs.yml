@@ -7,7 +7,7 @@
     state: installed
 
 - name: Add the user Roboshop
-  shell: useradd roboshop | bash
+  shell: sudo useradd roboshop | bash
 
 - name: Unarchive the package
   ansible.builtin.unarchive:
