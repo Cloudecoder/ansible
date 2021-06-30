@@ -17,7 +17,7 @@
     remote_src: yes
 
 - name: moving files
-  shell: mv /tmp/{{COMPONENT}}-main {{COMPONENT}} &&  mv /tmp/{{COMPONENT}} /home/roboshop/ | bash
+  shell: mv /tmp/{{COMPONENT}}-main {{COMPONENT}} | bash &&  mv /tmp/{{COMPONENT}} /home/roboshop/ | bash
   become_user: roboshop
 
 
