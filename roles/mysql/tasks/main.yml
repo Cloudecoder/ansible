@@ -50,7 +50,7 @@
 - name: Downloading Package from Github
   include_role:
     name: common
-    include_tasks: git_checkout.yml
+    tasks_from: git_checkout.yml
   vars:
     APP_DIR: /tmp/mysql-main
     EXTRACT_DIR: /tmp
