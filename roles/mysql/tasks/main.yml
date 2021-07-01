@@ -62,7 +62,7 @@
     name: all
     target: /tmp/mysql-main/shipping.sql
     login_host: root
-    login_password: Roboshop@1
+    login_password: RoboShop@1
 
 
 
