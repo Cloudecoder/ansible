@@ -8,12 +8,22 @@
     name: roboshop
     state: present
 
+- name: Downloading and Extracting from git hub
+  include_role:
+    name: common
+    tasks_from: git_checkout.yml
+  vars:
+    APP_DIR: /tmp/shipping
+    DEST_DIR: /tmp
 
-- name: Downloading&Extraction from Github to roboshop
-  ansible.builtin.git:
-    repo: https://github.com/roboshop-devops-project/shipping/archive/main.zip
-    dest: /home/roboshop/
-    unarchive: /tmp/shipping.zip
-    remote_src: yes
 
+
+
+#- name: Downloading&Extraction from Github to roboshop
+#  ansible.builtin.git:
+#    repo: https://github.com/roboshop-devops-project/shipping/archive/main.zip
+#    dest: /home/roboshop/
+#    unarchive: /tmp/shipping.zip
+#    remote_src: yes
+#
 
