@@ -68,3 +68,12 @@
   roles:
     - name: loading the mysql
       role: mysql
+
+- name: LOADING THE SHIPPING
+  hosts: SHIPPING
+  become: yes
+  tags:
+    - shipping
+  roles:
+    - name: loading the shipping
+      role: shipping
