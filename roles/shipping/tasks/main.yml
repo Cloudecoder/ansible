@@ -25,7 +25,7 @@
 
 - name: maven clean package
   become_user: roboshop
-  shell: cd /home/roboshop/shipping && maven clean package && mv target/shipping-1.0.jar shipping.jar
+  shell: cd /home/roboshop/shipping && maven clean package && mv target/shipping-1.0.jar shipping.jar | bash
 
 
 
