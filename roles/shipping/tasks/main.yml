@@ -15,7 +15,7 @@
     name: common
     tasks_from: git_checkout.yml
   vars:
-    APP_DIR: /tmp/shipping
+    APP_DIR: /home/roboshop/shipping
     EXTRACT_DIR: /tmp
 
 - name: rename the files
@@ -25,7 +25,7 @@
 
 - name: maven clean package
   become_user: roboshop
-  shell: maven clean package && mv target/shipping-1.0.jar shipping.jar | bash
+  shell: maven clean package && mv target/shipping-1.0.jar shipping.jar
   args:
     chdir: /home/roboshop/shipping
 
