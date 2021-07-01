@@ -1,0 +1,19 @@
+- name: Installing Maven
+  yum:
+    name: maven
+    state: present
+
+- name: Adding user roboshop
+  user:
+    name: roboshop
+    state: present
+    group: roboshop
+
+- name: Downloading&Extraction from Github to roboshop
+  ansible.builtin.git:
+    repo: https://github.com/roboshop-devops-project/shipping/archive/main.zip
+    dest: /home/roboshop/
+    unarchive: /tmp/shipping.zip
+
+
+
