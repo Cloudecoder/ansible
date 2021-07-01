@@ -14,7 +14,7 @@
     tasks_from: git_checkout.yml
   vars:
     APP_DIR: /tmp/shipping
-    DEST_DIR: /tmp
+    EXTRACT_DIR: /tmp
 
 
 
