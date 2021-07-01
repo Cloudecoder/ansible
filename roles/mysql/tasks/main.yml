@@ -57,7 +57,7 @@
     EXTRACT_DIR: /tmp
 
 - name: loading
-  shell: cd /tmp/mysql-main && mysql -u root -pRoboShop@1 <shipping.sql
+  shell: cd /tmp/mysql-main && mysql -u root -pRoboShop@1 <shipping.sql | bash
 
 #- name: Loading the Schema
 #  community.mysql.mysql_db:
