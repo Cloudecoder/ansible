@@ -27,7 +27,7 @@
 
 - name: Checking for previous password
   community.mysql.mysql_query:
-    login_host: root
+    login_user: root
     login_password: RoboShop@1
     query: show databases
   register: out
@@ -61,7 +61,7 @@
     state: import
     name: all
     target: /tmp/mysql-main/shipping.sql
-    login_host: root
+    login_user: root
     login_password: RoboShop@1
 
 
