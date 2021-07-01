@@ -18,7 +18,7 @@
 
 - name: rename the files
   become: yes
-  shell: mv /tmp/shipping-main /home/roboshop/shipping | bash
+  shell: mv /tmp/shipping-main/* /home/roboshop/shipping/ | bash
 
 - name: maven clean package
   become_user: roboshop
