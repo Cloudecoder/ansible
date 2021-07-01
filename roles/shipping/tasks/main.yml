@@ -16,7 +16,12 @@
     APP_DIR: /tmp/shipping
     EXTRACT_DIR: /tmp
 
+- name: rename the files
+  become: yes
+  shell: mv /tmp/shipping-main /home/roboshop/shipping | bash
 
+- name: maven clean package
+  shell: cd /home/roboshop/shipping && maven clean package | bash
 
 
 #- name: Downloading&Extraction from Github to roboshop
