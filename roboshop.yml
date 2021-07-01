@@ -60,3 +60,11 @@
     - name: loading the cart
       role: cart
 
+- name: LOADING THE MYSQL
+  hosts: MYSQL
+  become: yes
+  tags:
+    - mysql
+  roles:
+    - name: loading the mysql
+      role: mysql
