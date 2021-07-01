@@ -20,6 +20,13 @@
   become: yes
   shell: mv /tmp/shipping-main/* /home/roboshop/shipping/ | bash
 
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /home/roboshop/shipping
+    owner: roboshop
+    group: roboshop
+
+
 - name: maven clean package
   become_user: roboshop
   shell: cd /home/roboshop/shipping && maven clean package | bash
