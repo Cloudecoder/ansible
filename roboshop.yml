@@ -51,7 +51,7 @@
     - name: loading the user
       role: user
 
-- name: LOADING THE USER
+- name: LOADING THE CART
   hosts: CART
   become: yes
   tags:
