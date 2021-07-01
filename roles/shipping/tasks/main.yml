@@ -1,13 +1,8 @@
 - name: Installing Maven
   yum:
-    name: maven
+    name:
+      - maven
     state: installed
-
-- name : Starting the service
-  systemd:
-    name: maven
-    state: started
-    enabled: yes
 
 
 - name: Adding user roboshop
