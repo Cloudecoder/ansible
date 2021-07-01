@@ -16,6 +16,7 @@
   yum:
     name:
       - mysql-community-server
+      - MySQL-python
     state: present
 
 - name: Starting & Enabling MySQLd
@@ -44,7 +45,7 @@
         dest: /tmp/default_password.sql
 
     - name: setting/reset the password
-      shell: mysql -connect-expired-password -u root -p"{{MYSQL_DEFAULT_PASSWORD.stdout}}" </tmp/default_password.sql
+      shell: mysql --connect-expired-password -u root -p"{{MYSQL_DEFAULT_PASSWORD.stdout}}" </tmp/default_password.sql
   when: out.failed
 
 - name: Downloading Package from Github
