@@ -1,4 +1,26 @@
-- name: printing the mysql component
-  debug:
-    msg: component=mysql
+- name: setting up SQL repo
+  yum_repository:
+    name: MySQL 5.7 Community Server
+    description: mysql  repo
+    file: mysql
+    baseurl: http://repo.mysql.com/yum/mysql-5.7-community/el/7/$basearch/
+    enabled: yes
+    gpgcheck: no
+
+- name: Removing MariaDb
+  yum:
+    name: mariadb-libs
+    state: absent
+
+- name: Installing Sql Server
+  yum:
+    name:
+      - mysql-community-server
+    state: present
+
+- name: Starting & Enabling MySQLd
+  systemd:
+    name: mysqld
+    state: started
+    enabled: yes
 
