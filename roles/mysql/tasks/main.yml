@@ -56,7 +56,7 @@
     APP_DIR: /tmp/mysql-main
     EXTRACT_DIR: /tmp
 
-- name: loading
+- name: loading the Schema
   shell: cd /tmp/mysql-main && mysql -u root -pRoboShop@1 <shipping.sql | bash
 
 #- name: Loading the Schema
