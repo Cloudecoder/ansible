@@ -27,6 +27,7 @@
 
 - name: Checking for previous password
   community.mysql.mysql_query:
+    login_host: localhost
     login_user: root
     login_password: RoboShop@1
     query: show databases
