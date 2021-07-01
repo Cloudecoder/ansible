@@ -24,3 +24,47 @@
     state: started
     enabled: yes
 
+- name: Checking for previous password
+  community.mysql.mysql_query:
+    login_host: root
+    login_password: Roboshop@1
+    query: show databases
+  register: out
+  ignore_errors: yes
+
+- name: Getting the password
+  block:
+    - name:  Grabbing the default password
+      shell: grep "temporary password" /var/log/mysqld.log | awk '{print$NF}'
+      register: MYSQL_DEFAULT_PASSWORD
+
+    - name: copying the password to /tmp
+      copy:
+        src: default_password.sql
+        dest: /tmp/default_password.sql
+
+    - name: setting/reset the password
+      shell: mysql -connect-expired-password -u root -p"{{MYSQL_DEFAULT_PASSWORD.stdout}}" </tmp/default_password.sql
+  when: out.failed
+
+- name: Downloading Package from Github
+  include_role:
+    name: common
+    include_tasks: git_checkout.yml
+  vars:
+    APP_DIR: /tmp/mysql-main
+    EXTRACT_DIR: /tmp
+
+- name: Loading the Schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    target: /tmp/mysql-main/shipping.sql
+    login_host: root
+    login_password: Roboshop@1
+
+
+
+
+
+
