@@ -41,7 +41,7 @@
 
     - name: copying the password to /tmp
       copy:
-        src: default_password.sql
+        src: roles/mysql/files/default_password.sql
         dest: /tmp/default_password.sql
 
     - name: setting/reset the password
