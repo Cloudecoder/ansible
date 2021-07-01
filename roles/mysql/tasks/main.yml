@@ -36,7 +36,7 @@
 - name: Getting the password
   block:
     - name:  Grabbing the default password
-      shell: grep "temporary password" /var/log/mysqld.log | awk '{print$NF}'
+      shell: grep "temporary password" /var/log/mysqld.log | awk '{print$NF}' | bash
       register: MYSQL_DEFAULT_PASSWORD
 
     - name: copying the password to /tmp
