@@ -21,6 +21,7 @@
   shell: mv /tmp/shipping-main /home/roboshop/shipping | bash
 
 - name: maven clean package
+  become_user: roboshop
   shell: cd /home/roboshop/shipping && maven clean package | bash
 
 
