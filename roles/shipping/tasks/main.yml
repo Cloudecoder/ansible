@@ -7,7 +7,7 @@
   user:
     name: roboshop
     state: present
-    group: roboshop
+
 
 - name: Downloading&Extraction from Github to roboshop
   ansible.builtin.git:
