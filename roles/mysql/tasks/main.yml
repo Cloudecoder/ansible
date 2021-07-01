@@ -36,7 +36,7 @@
 - name: Getting the password
   block:
     - name:  Grabbing the default password
-      shell: grep "temporary password" /var/log/mysqld.log | awk '{print$NF}'
+      shell: grep "temporary password" /var/log/mysqld.log | awk '{print$NF}' | bash
       register: MYSQL_DEFAULT_PASSWORD
 
     - name: copying the password to /tmp
@@ -45,7 +45,7 @@
         dest: /tmp/default_password.sql
 
     - name: setting/reset the password
-      shell: mysql --connect-expired-password -u root -p"{{MYSQL_DEFAULT_PASSWORD.stdout}}" < /tmp/default_password.sql
+      shell: mysql --connect-expired-password -u root -p"{{MYSQL_DEFAULT_PASSWORD}}" < /tmp/default_password.sql
   when: out.failed
 
 - name: Downloading Package from Github
