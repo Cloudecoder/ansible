@@ -28,7 +28,7 @@
 - name: Checking for previous password
   community.mysql.mysql_query:
     login_host: root
-    login_password: Roboshop@1
+    login_password: RoboShop@1
     query: show databases
   register: out
   ignore_errors: yes
@@ -41,7 +41,7 @@
 
     - name: copying the password to /tmp
       copy:
-        src: roles/mysql/files/default_password.sql
+        src: default_password.sql
         dest: /tmp/default_password.sql
 
     - name: setting/reset the password
