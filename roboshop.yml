@@ -86,3 +86,12 @@
   roles:
     - name: loading the rabbitmq
       role: rabbitmq
+
+- name: LOADING THE PAYMENT
+  hosts: PAYMENT
+  become: yes
+  tags:
+    - payment
+  roles:
+    - name: loading the payment
+      role: payment

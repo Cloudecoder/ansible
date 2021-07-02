@@ -27,6 +27,17 @@
   become_user: roboshop
   shell: cd /home/roboshop/shipping && maven clean package && mv target/shipping-1.0.jar shipping.jar | bash
 
+- name: loading the systemd file
+  copy:
+    src: shipping.service
+    dest: /etc/systemd/system/shipping.service
+
+- name: Restarting and enabling the service
+  systemd:
+    name: shipping
+    daemon_reload: yes
+    state: started
+    enabled: yes
 
 
 #- name: Downloading&Extraction from Github to roboshop

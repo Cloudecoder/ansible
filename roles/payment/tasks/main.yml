@@ -1,4 +1,10 @@
-- name: printing the payment component
-  debug:
-    msg: component=payment
+- name: Installing the payment component
+  yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+
 
