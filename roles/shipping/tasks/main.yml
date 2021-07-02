@@ -19,14 +19,16 @@
 
 
 - name: rename the files
-  become: yes
+  become_user: roboshop
   command: mv /tmp/shipping-main /home/roboshop/shipping
 
 
 
 - name: maven clean package
   become_user: roboshop
-  command:  cd /home/roboshop/shipping && maven clean package && mv target/shipping-1.0.jar shipping.jar
+  command: maven clean package && mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /home/roboshop/shipping
 
 
 
