@@ -14,7 +14,7 @@
     name: common
     tasks_from: git_checkout.yml
   vars:
-    APP_DIR: /home/roboshop/shipping
+    APP_DIR: /home/roboshop/shipping/
     EXTRACT_DIR: /tmp
 
 
