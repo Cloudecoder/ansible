@@ -1,5 +1,13 @@
-- name: printing the component
-  debug:
-    msg: component = rabbitmq
+- name: Installing Erlang package
+  yum:
+    name: https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erlang-23.2.6-1.el7.x86_64.rpm
+    state: present
 
+- name: Setup the Repository
+  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+
+- name: Installing RabbitMQ package
+  yum:
+    name: rabbitmq-server
+    state: installed
 
