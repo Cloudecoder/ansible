@@ -30,7 +30,7 @@
     executable: pip3
 
 - name: Updating the payment.ini file
-  become: yes
+  become_user: roboshop
   lineinfile:
     dest: /home/roboshop/payment/payment.ini
     regexp: "{{ item.from }}"
