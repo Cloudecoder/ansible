@@ -33,11 +33,11 @@
   become: yes
   lineinfile:
     dest: /home/roboshop/payment/payment.ini
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    items:
-      - { regexp: 'uid = 1', line: 'uid = 1001' }
-      - { regexp: 'gid = 1', line: 'gid = 1001' }
+    regexp: "{{ item.from }}"
+    line: "{{ item.to }}"
+    with_items:
+      - { from: 'uid = 1', to: 'uid = 1001' }
+      - { from: 'gid = 1', to: 'gid = 1001' }
 
 - name: Updating the systemd file
   copy:
