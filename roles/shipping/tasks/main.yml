@@ -1,7 +1,7 @@
 - name: Installing Maven
   yum:
     name: maven
-    state: installed
+    state: latest
 
 
 - name: Adding user roboshop
