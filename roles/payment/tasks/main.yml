@@ -21,7 +21,7 @@
 
 - name: Moving the files inside the roboshop
   shell: mv /tmp/payment-main /home/roboshop/payment | bash
-  become_user: roboshop
+  become: yes
 
 - name: Installing the Dependencies
   become: yes
