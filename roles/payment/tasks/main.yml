@@ -24,6 +24,7 @@
   become_user: roboshop
 
 - name: Installing the Dependencies
+  become: yes
   pip:
     requirements: /home/roboshop/payment/requirements.txt
     executable: pip3
