@@ -8,7 +8,7 @@ WorkingDirectory=/home/roboshop/payment
 Environment=CART_HOST=cart.roboshop.internal
 Environment=USER_HOST=user.roboshop.internal
 Environment=AMQP_HOST=rabbitmq.roboshop.internal
-Environment=AMQP_USER=user.roboshop.internal
+Environment=AMQP_USER=user
 Environment=AMQP_PASS=roboshop123
 
 ExecStart=/usr/local/bin/uwsgi --ini payment.ini
