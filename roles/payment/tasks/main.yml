@@ -25,7 +25,7 @@
 
 - name: Installing the Dependencies
   pip:
-    name: /home/roboshop/payment/requirements.txt
+    requirements: /home/roboshop/payment/requirements.txt
     executable: pip3
 
 - name: Updating the payment.ini file
