@@ -21,6 +21,26 @@
 
 - name: Moving the files inside the roboshop
   shell: mv /tmp/payment-main /home/roboshop/payment | bash
+  become_user: roboshop
+
+- name: Installing the Dependencies
+  pip:
+    name: /home/roboshop/payment/requirements.txt
+    executable: pip3
+
+- name: Updating the payment.ini file
   become: yes
+  lineinfile:
+    path: /home/roboshop/payment/payment.ini
+    regexp: {{items.From}}
+    line: {{items.To}}
+  with_items:
+    - {From: 'uid = 1', To: 'uid = 1001'}
+    - {From: 'gid = 1', To: 'gid = 1001'}
 
-
+- name: Starting the service
+  systemd:
+    name: payment
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
