@@ -17,9 +17,10 @@
   vars:
     APP_DIR: /home/roboshop/shipping
     EXTRACT_DIR: /tmp
+  become_user: roboshop
 
 - name: rename the files
-  become: yes
+  become: roboshop
   shell: mv /tmp/shipping-main/* /home/roboshop/shipping/ | bash
 
 
