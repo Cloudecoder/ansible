@@ -1,0 +1,11 @@
+[HOSTS]
+cart.roboshop.internal
+catalogue.roboshop.internal
+frontend.roboshop.internal
+mongodb.roboshop.internal
+mysql.roboshop.internal
+payment.roboshop.internal
+rabbitmq.roboshop.internal
+redis.roboshop.internal
+shipping.roboshop.internal
+user.roboshop.internal
