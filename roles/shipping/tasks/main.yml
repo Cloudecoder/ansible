@@ -1,12 +1,8 @@
 - name: Installing Maven
   yum:
     name: maven
-    state: latest
+    state: installed
 
-- name: Service Maven Started
-  systemd:
-    name: maven
-    state: started
 
 - name: Adding user roboshop
   user:
