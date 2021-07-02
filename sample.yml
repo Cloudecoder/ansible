@@ -23,10 +23,10 @@
       debug:
         msg: url == {{url}}
 
-- name: print address fron inventory
+- name: print address fron ansible-pull.yml
   hosts: all
   tasks:
-    - name: printing from inventory file
+    - name: printing from ansible-pull.yml file
       debug:
         msg: url=={{url}}
 

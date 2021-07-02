@@ -1,0 +1,6 @@
+- name: LOADING THE COMPONENT OF {{COMPONENT}}
+  hosts: all
+  become: yes
+  roles:
+    - name: loading roles
+      role: {{COMPONENT}}
