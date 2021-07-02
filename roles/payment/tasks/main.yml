@@ -31,7 +31,14 @@
 
 - name: Updating the payment.ini file
   become: yes
-  shell: sed -i 's/uid = 1/uid = 1001/g' && sed -i 's/gid = 1/gid = 1001/g' /home/roboshop/payment/payment.ini | bash
+  lineinfile:
+    dest: /home/roboshop/payment/payment.ini
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    loop:
+      - { regexp: 'uid = 1', line: 'uid = 1001' }
+      - { regexp: 'gid = 1', line: 'gid = 1001' }
+
 
 
 
