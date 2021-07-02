@@ -35,7 +35,7 @@
     dest: /home/roboshop/payment/payment.ini
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
-    loop:
+    items:
       - { regexp: 'uid = 1', line: 'uid = 1001' }
       - { regexp: 'gid = 1', line: 'gid = 1001' }
 
