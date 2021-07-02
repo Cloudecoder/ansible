@@ -14,13 +14,13 @@
     name: common
     tasks_from: git_checkout.yml
   vars:
-    APP_DIR: /home/roboshop
+    APP_DIR: /home/roboshop/shipping
     EXTRACT_DIR: /tmp
 
 
 - name: rename the files
   become: roboshop
-  shell: mv /tmp/shipping-main/* /home/roboshop/shipping | bash
+  shell: mv /tmp/shipping-main/* /home/roboshop/ | bash
 
 
 - name: maven clean package
