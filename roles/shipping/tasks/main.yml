@@ -20,7 +20,11 @@
 
 - name: rename the files
   become_user: roboshop
-  command: mv /tmp/shipping-main /home/roboshop/shipping
+  copy:
+    src: /tmp/shipping-main
+    dest: /home/roboshop/shipping
+    remote_src: yes
+
 
 
 
