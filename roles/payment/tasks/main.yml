@@ -31,7 +31,7 @@
 
 - name: Updating the payment.ini file
   become: yes
-  shell: sed -e 's/uid = 1/uid = 1001/g' sed -e 's/gid = 1/gid = 1001/g' /home/roboshop/payment/payment.ini | bash
+  shell: sed -i 's/uid = 1/uid = 1001/g' && sed -i 's/gid = 1/gid = 1001/g' /home/roboshop/payment/payment.ini
 
 
 - name: Starting the service
