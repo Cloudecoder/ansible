@@ -30,13 +30,8 @@
 
 - name: Updating the payment.ini file
   become: yes
-  lineinfile:
-    path: /home/roboshop/payment/payment.ini
-    regexp: {{items.From}}
-    line: {{items.To}}
-  with_items:
-    - {From: 'uid = 1', To: 'uid = 1001'}
-    - {From: 'gid = 1', To: 'gid = 1001'}
+  shell: sed -e 's/uid = 1/uid = 1001/g' sed -e 's/gid = 1/gid = 1001/g' /home/roboshop/payment/payment.ini | bash
+
 
 - name: Starting the service
   systemd:
