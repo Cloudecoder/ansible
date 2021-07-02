@@ -1,7 +1,6 @@
 - name: Installing Maven
   yum:
-    name:
-      - maven
+    name: maven
     state: installed
 
 
@@ -15,9 +14,9 @@
     name: common
     tasks_from: git_checkout.yml
   vars:
-    APP_DIR: /home/roboshop/shipping
+    APP_DIR: /home/roboshop
     EXTRACT_DIR: /tmp
-  become_user: roboshop
+
 
 - name: rename the files
   become: roboshop
@@ -27,8 +26,7 @@
 - name: maven clean package
   become_user: roboshop
   shell: maven clean package && mv target/shipping-1.0.jar shipping.jar | bash
-  args:
-    chdir: /home/roboshop/shipping
+
 
 - name: loading the systemd file
   copy:
