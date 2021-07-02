@@ -20,7 +20,7 @@
 
 - name: rename the files
   become: yes
-  shell: mv /tmp/shipping-main /home/roboshop/shipping | bash
+  command: mv /tmp/shipping-main /home/roboshop/shipping
 
 
 
