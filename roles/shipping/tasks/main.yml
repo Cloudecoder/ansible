@@ -25,7 +25,9 @@
 
 - name: maven clean package
   become_user: roboshop
-  shell: cd /home/roboshop/shipping && maven clean package && mv target/shipping-1.0.jar shipping.jar | bash
+  shell: maven clean package && mv target/shipping-1.0.jar shipping.jar | bash
+  args:
+    chdir: /home/roboshop/shipping
 
 - name: loading the systemd file
   copy:
