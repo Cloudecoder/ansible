@@ -21,6 +21,8 @@
 - name: rename the files
   become: yes
   shell: mv /tmp/shipping-main/ /home/roboshop/shipping | bash
+  args:
+    chdir: /home/roboshop/shipping
 
 
 - name: maven clean package
