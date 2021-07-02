@@ -3,6 +3,10 @@
     name: maven
     state: latest
 
+- name: Service Maven Started
+  systemd:
+    name: maven
+    state: started
 
 - name: Adding user roboshop
   user:
