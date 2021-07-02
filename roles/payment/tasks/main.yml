@@ -39,7 +39,10 @@
       - { regexp: 'uid = 1', line: 'uid = 1001' }
       - { regexp: 'gid = 1', line: 'gid = 1001' }
 
-
+- name: Updating the systemd file
+  copy:
+    src: payment.service
+    dest: /etc/systemd/system/payment.service
 
 
 - name: Starting the service
