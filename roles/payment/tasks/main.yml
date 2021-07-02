@@ -29,15 +29,15 @@
     requirements: /home/roboshop/payment/requirements.txt
     executable: pip3
 
-- name: Updating the payment.ini file
-  become_user: roboshop
-  lineinfile:
-    dest: /home/roboshop/payment/payment.ini
-    regexp: "{{ item.from }}"
-    line: "{{ item.to }}"
-    with_items:
-      - { from: 'uid = 1', to: 'uid = 1001' }
-      - { from: 'gid = 1', to: 'gid = 1001' }
+#- name: Updating the payment.ini file
+#  become_user: roboshop
+#  lineinfile:
+#    dest: /home/roboshop/payment/payment.ini
+#    regexp: "{{ item.from }}"
+#    line: "{{ item.to }}"
+#    with_items:
+#      - { from: 'uid = 1', to: 'uid = 1001' }
+#      - { from: 'gid = 1', to: 'gid = 1001' }
 
 - name: Updating the systemd file
   copy:
