@@ -26,9 +26,8 @@
 
 - name: maven clean package
   become_user: roboshop
-  command: maven clean package && mv target/shipping-1.0.jar shipping.jar
-  args:
-    chdir: /home/roboshop/shipping
+  command:  cd /home/roboshop/shipping && maven clean package && mv target/shipping-1.0.jar shipping.jar
+
 
 
 
