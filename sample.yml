@@ -37,7 +37,9 @@
       debug:
         msg: python version ={{ansible_python_version}}
 
-
+- name: hfiudsh
+  tasks:
+    yum
 
 
 
